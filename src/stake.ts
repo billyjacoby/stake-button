@@ -8,7 +8,8 @@ import {
   Transaction,
 } from '@solana/web3.js';
 
-const SOLADEX_VOTE_ACCOUNT = 'CwSZ17woioM2bqEbaswZJYvx5pemN6t3shBcU6zqPHyG';
+export const SOLADEX_VOTE_ACCOUNT =
+  'CwSZ17woioM2bqEbaswZJYvx5pemN6t3shBcU6zqPHyG';
 //! DEV AND WRONG
 // const SOLADEX_VOTE_ACCOUNT = 'Ddiy29vVeYVdU77qBQR4uKbFJfQRJsbyDQ84oMFLEbhB';
 

@@ -13,10 +13,15 @@ import {
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { clusterApiUrl } from '@solana/web3.js';
 
-export const Wallet = ({ children }: { children: ReactNode }) => {
+export const Wallet = ({
+  children,
+  network,
+}: {
+  children: ReactNode;
+  network: WalletAdapterNetwork;
+}) => {
   // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
-  const network = WalletAdapterNetwork.Mainnet;
-  console.log('Stake Button Network: ', network);
+  console.log('Current Network: ', network);
 
   // You can also provide a custom RPC endpoint.
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
@@ -26,6 +31,7 @@ export const Wallet = ({ children }: { children: ReactNode }) => {
   // of wallets that your users connect to will be loaded.
   const wallets = useMemo(
     () => [new PhantomWalletAdapter(), new SlopeWalletAdapter()],
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [network]
   );
 
