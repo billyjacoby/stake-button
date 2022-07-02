@@ -31,7 +31,7 @@ export function App() {
         setWalletBalance('loading...');
       }
     })();
-  }, [wallet?.publicKey]);
+  }, [wallet?.publicKey, connection]);
 
   const onSendClick = async () => {
     if (wallet?.publicKey && wallet?.signTransaction && solToStake) {
